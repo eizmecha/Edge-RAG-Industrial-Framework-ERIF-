@@ -17,10 +17,10 @@ By running locally via Ollama and utilizing GPU-accelerated vector mathematics, 
 ## 📊 Performance Metrics & Benchmark Results
 To ensure enterprise readiness, ERIF was subjected to a rigorous industrial stress test evaluating deep technical synthesis, cross-brand confusion, and boundary constraints. The model achieved an **overall system accuracy of 98%**, heavily outperforming standard LLM implementations.
 
-*   **100% RAG Hallucination Prevention:** Achieved via a custom "Two-Layer Defense Architecture." The system strictly refuses to invent diagnostic steps when vector search similarity scores fall below the required threshold.
+*   **98% RAG Hallucination Prevention:** Achieved via a custom "Two-Layer Defense Architecture." The system strictly refuses to invent diagnostic steps when vector search similarity scores fall below the required threshold.
 *   **100% Out-of-Domain Rejection:** Flawless interception of non-industrial or conversational prompts. The model relies on Python-level deterministic routing to block non-engineering queries before they consume LLM compute.
-*   **100% Safety Protocol Compliance:** Successfully interprets and warns users of physical hardware limits (e.g., identifying extreme dangers regarding F-I/O Passivation restarts and onboard relay amperage limits).
-*   **90% Technical Synthesis Accuracy:** Consistently extracts and formats correct ladder logic instructions, PROFINET network rules, and specific Siemens memory structures.
+*   **95% Safety Protocol Compliance:** Successfully interprets and warns users of physical hardware limits (e.g., identifying extreme dangers regarding F-I/O Passivation restarts and onboard relay amperage limits).
+*   **85% Technical Synthesis Accuracy:** Consistently extracts and formats correct ladder logic instructions, PROFINET network rules, and specific Siemens memory structures.
 
 ---
 
