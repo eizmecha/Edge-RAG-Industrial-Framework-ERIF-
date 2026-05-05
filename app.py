@@ -144,6 +144,7 @@ def main():
         "3. NO HALLUCINATION: Do NOT invent diagnostic steps. Do NOT reference page numbers unless explicitly written in the <CONTEXT>.\n"
         "4. OUT OF DOMAIN: If the <CONTEXT> is empty, or if it does NOT contain the exact answer to the user's prompt (e.g., recipes, general health, non-Siemens topics), you are FORBIDDEN from answering from internal knowledge.\n"
         "5. FALLBACK STRING: If forbidden by Rule 4, you MUST reply with this exact phrase and nothing else: 'Insufficient data in local memory. Please consult a senior engineer.'\n"
+        "When answering about sequential processes or multiple modes (e.g., Pretuning vs Fine Tuning), explicitly separate their conditions and do not mix them."
         "</RULES>\n\n"
         "<CONTEXT>\n"
         "{context}\n"
