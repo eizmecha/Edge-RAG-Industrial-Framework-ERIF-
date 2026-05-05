@@ -28,7 +28,7 @@ def create_local_knowledge_base():
     Industrial Data Ingestion Pipeline:
     Reads Siemens S7-1200 PDF manuals, processes them using PDFPlumber to preserve 
     critical tabular data (Fault Codes, Memory Maps), generates embeddings locally 
-    via HuggingFace utilizing CUDA/Tensor Cores, and indexes them in a FAISS database.
+    via HuggingFace utilizing the CPU, and indexes them in a FAISS database.
     """
     try:
         start_time = time.time()
@@ -76,21 +76,21 @@ def create_local_knowledge_base():
         logger.info(f"Phase 2 Complete: Generated {len(chunks)} semantic text chunks for vectorization.")
 
         # ==========================================
-        # 4. Hardware-Accelerated Embeddings (Text-to-Math)
+        # 4. CPU-Based Embeddings (Text-to-Math)
         # ==========================================
-        # Explicitly routing vector mathematical operations to the RTX 4090 GPU (CUDA)
-        logger.info("Phase 3: Initializing HuggingFace Embeddings model (all-MiniLM-L6-v2) on CUDA GPU...")
+        # Explicitly routing vector mathematical operations to the CPU (Universal Compatibility)
+        logger.info("Phase 3: Initializing HuggingFace Embeddings model (all-MiniLM-L6-v2) on CPU...")
         
         embeddings = HuggingFaceEmbeddings(
             model_name="all-MiniLM-L6-v2",
-            model_kwargs={'device': 'cuda'}  # CRITICAL: Engages VRAM and Tensor Cores
+            model_kwargs={'device': 'cpu'}  # CRITICAL: Forces CPU execution to bypass CUDA errors
         )
 
         # ==========================================
         # 5. Local FAISS Vector Database Creation
         # ==========================================
-        logger.info("Phase 4: Compiling the local FAISS vector memory matrix...")
-        # This operation is now GPU-accelerated and handles 10,000+ chunks rapidly
+        logger.info("Phase 4: Compiling the local FAISS vector memory matrix via CPU...")
+        # This operation will utilize the CPU threads to handle the 10,000+ chunks
         vector_store = FAISS.from_documents(chunks, embeddings)
         
         # Ensure the target directory exists before saving
@@ -111,4 +111,3 @@ def create_local_knowledge_base():
 # ==========================================
 if __name__ == "__main__":
     create_local_knowledge_base()
-
