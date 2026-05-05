@@ -101,7 +101,7 @@ Once the system is compiled, ERIF functions as a Senior Automation Engineer. Her
 Clone the repository and install the strict environment dependencies.
 ```bash
 git clone [https://github.com/eizmecha/Edge-RAG-Industrial-Framework-ERIF-.git](https://github.com/eizmecha/Edge-RAG-Industrial-Framework-ERIF-.git)
-cd Industrial-SCADA-RAG
+cd Edge-RAG-Industrial-Framework-ERIF-
 python -m venv venv
 
 # Activate on Windows:
