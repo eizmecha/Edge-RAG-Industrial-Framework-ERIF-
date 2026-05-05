@@ -45,7 +45,7 @@ ERIF is engineered utilizing a multi-disciplinary system architecture:
 ---
 
 ## 📂 Project Structure
-
+```text
 Industrial-SCADA-RAG/
 ├── app.py                  # Main Streamlit SCADA HMI & RAG Orchestration
 ├── ingest_data.py          # Data ingestion, PDF parsing, & vector pipeline
