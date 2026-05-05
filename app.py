@@ -105,7 +105,7 @@ def main():
             st.session_state.messages = []
             st.rerun()
             
-        if st.button("🛑 EMERGENCY STOP", type="primary"):
+        if st.button("🛑STOP/EXIT", type="primary"):
             logger.critical("E-STOP TRIGGERED BY OPERATOR. INITIATING DOM BLACKOUT AND KERNEL TERMINATION.")
             components.html(
                 """
