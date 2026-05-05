@@ -50,6 +50,7 @@ Industrial-SCADA-RAG/
 ├── app.py                  # Main Streamlit SCADA HMI & RAG Orchestration
 ├── ingest_data.py          # Data ingestion, PDF parsing, & vector pipeline
 ├── requirements.txt        # Strict Python environment dependencies
+├── Results                 # Test Rersults of the RAG Model
 ├── README.md               # System documentation & deployment guide
 ├── .gitignore              # Filters out large DBs and proprietary PDFs
 ├── data/                   # [DO NOT UPLOAD] Siemens PDFs directory
